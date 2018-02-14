@@ -1,17 +1,14 @@
-## Conan Jwt-Cpp Package Builder
+## Conan Jwt-Cpp Package
 
 A Conan package recipe for the [jwt-cpp](https://github.com/pokowaka/jwt-cpp) library.
 
-The recipe was forked from the [Bincrafters Conan Templates](https://github.com/bincrafters/conan-templates) recipe.
+The recipe was forked from: https://github.com/bincrafters/conan-templates.
 
 ## To Build Package
 
 ```bash
 conan create . impressivedev/stable
-```bash
-
-Using
-https://github.com/bincrafters/conan-templates
+```
 
 ### Notes
 
