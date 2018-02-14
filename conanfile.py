@@ -6,11 +6,11 @@ from conans import ConanFile, CMake, tools
 import os
 
 
-class LibnameConan(ConanFile):
-    name = "libname"
-    version = "0.0.0"
-    url = "https://github.com/bincrafters/conan-libname"
-    description = "Keep it short"
+class JwtcppConan(ConanFile):
+    name = "jwt-cpp"
+    version = "1.0"
+    url = "https://github.com/ImpressiveDev/conan-jwt-cpp"
+    description = "A C++11 implementation of the JSON Web Token standard."
 
     # Indicates License type of the packaged library
     license = "MIT"
@@ -36,14 +36,16 @@ class LibnameConan(ConanFile):
     # So, with libs like zlib, updates are very rare, so we now use static version
 
     requires = (
-        "OpenSSL/[>=1.0.2l]@conan/stable",
-        "zlib/1.2.11@conan/stable"
+       "OpenSSL/[>=1.1.0g]@conan/stable"
     )
 
     def source(self):
-        source_url = "https://github.com/libauthor/libname"
-        tools.get("{0}/archive/v{1}.tar.gz".format(source_url, self.version))
-        extracted_dir = self.name + "-" + self.version
+        source_url = "https://github.com/pokowaka/jwt-cpp"
+        #tools.get("{0}/archive/v{1}.tar.gz".format(source_url, self.version))
+        #extracted_dir = self.name + "-" + self.version
+        commit = "a148c9ebebda695e4102fabdd1a85190774ece38"
+        tools.get("{0}/archive/{1}.tar.gz".format(source_url, commit))
+        extracted_dir = self.name + "-" + commit
 
         #Rename to "source_subfolder" is a convention to simplify later steps
         os.rename(extracted_dir, self.source_subfolder)

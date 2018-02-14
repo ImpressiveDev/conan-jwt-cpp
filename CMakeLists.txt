@@ -1,6 +1,15 @@
 project(cmake_wrapper)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+include(conanbuildinfo.cmake)
 conan_basic_setup()
+
+set(OPENSSL_INCLUDE_DIRS ${CONAN_INCLUDE_DIRS_OPENSSL})
+set(OPENSSL_LIBRARY_DIRS ${CONAN_LIB_DIRS_OPENSSL})
+
+set(ENABLE_GPERF_TOOLS OFF CACHE BOOL "" FORCE)
+set(ENABLE_COVERAGE OFF CACHE BOOL "" FORCE)
+set(ENABLE_DOC OFF CACHE BOOL "" FORCE)
+set(ENABLE_TESTS OFF CACHE BOOL "" FORCE)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 
 add_subdirectory("source_subfolder")
