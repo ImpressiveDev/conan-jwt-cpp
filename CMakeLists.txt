@@ -1,4 +1,4 @@
-project(cmake_wrapper)
+project(conan-jwt-cpp)
 
 include(conanbuildinfo.cmake)
 conan_basic_setup()
